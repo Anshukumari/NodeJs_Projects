@@ -9,6 +9,7 @@ const app = express();
 // by object deStructuring
 
 const postRoutes = require("./routes/post");
+const bodyParser = require('body-parser');
 
 const MONGO_URI = 'mongodb://localhost:27017/NodeJSDB';
 mongoose.connect(
@@ -22,6 +23,8 @@ mongoose.connection.on('error', err => {
 
 // middleware
 app.use(morgan("dev"));
+app.use(bodyParser.json());
+app.use("/",postRoutes);
 
 app.use("/",postRoutes);
 

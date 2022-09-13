@@ -21,4 +21,4 @@ console.log(validator.isURL('http://Examplegmail.com'));
 
 // importing chalk libraray
 const chalk = require('chalk');
-console.log(chalk.blue.underline.bold('Success!'));
+console.log(chalk.green.inverse.bold('Success!'));
